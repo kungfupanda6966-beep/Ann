@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Anniversary Raaanuu ❤️</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(-45deg, #ff6b6b, #feca57, #48dbfb, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container { max-width: 1000px; margin: 0 auto; animation: fadeIn 2s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(50px); } to { opacity: 1; transform: translateY(0); } }
+        
+        .heart-big { 
+            font-size: 6rem; 
+            animation: heartbeat 1.5s infinite; 
+            cursor: pointer;
+            margin: 30px 0;
+            transition: transform 0.3s;
+        }
+        .heart-big:hover { transform: scale(1.2); }
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+        }
+        
+        h1 {
+            font-size: 4.5rem;
+            background: linear-gradient(45deg, #fff, #ff9ff3);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 20px 0;
+            cursor: pointer;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        h1:active { transform: scale(0.95); }
+        
+        .name {
+            font-size: 5rem;
+            color: #fff;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+            margin: 30px 0;
+            cursor: pointer;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 4px 4px 8px rgba(0,0,0,0.5), 0 0 20px #ff6b6b; }
+            to { text-shadow: 4px 4px 8px rgba(0,0,0,0.5), 0 0 30px #feca57; }
+        }
+        
+        .love-kilo-meter {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(15px);
+            border-radius: 25px;
+            padding: 25px;
+            margin: 40px auto;
+            max-width: 450px;
+            cursor: pointer;
+            border: 3px solid rgba(255,255,255,0.4);
+            transition: all 0.3s ease;
+        }
+        .love-kilo-meter:hover { 
+            transform: scale(1.05); 
+            border-color: #ff4757;
+            box-shadow: 0 20px 40px rgba(255,71,87,0.3);
+        }
+        #kiloFill {
+            width: 0%; height: 30px;
+            background: linear-gradient(90deg, #ff4757, #ff6b6b, #feca57, #48dbfb);
+            border-radius: 15px;
+            transition: width 2.5s ease;
+            margin: 15px 0;
+        }
+        .kilo-input-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            align-items: center;
+            margin: 15px 0;
+        }
+        .kilo-input-group input {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            width: 120px;
+            text-align: center;
+            background: rgba(255,255,255,0.9);
+            font-weight: bold;
+            color: #ff4757;
+        }
+        .kilo-input-group button {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        .kilo-input-group button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255,71,87,0.4);
+        }
+        .love-message {
+            color: #fff;
+            font-size: 1.3rem;
+            font-weight: bold;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        .love-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        .photo-frame {
+            position: relative;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: all 0.4s ease;
+            height: 280px;
+            background: #ddd;
+        }
+        .photo-frame:hover {
+            transform: translateY(-15px) scale(1.03);
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+        }
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .memory-text {
+            position: absolute;
+            bottom: 0;
+            left: 0; right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.85));
+            color: white;
+            padding: 25px 20px 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .photo-frame:hover .memory-text { transform: translateY(0); }
+        
+        .special-gift {
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 25px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            display: none;
+            box-shadow: 0 30px 70px rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.3);
+            animation: bounceIn 0.6s ease;
+        }
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .btn {
+            background: linear-gradient(45deg, #ff6b6b, #ff4757);
+            color: white;
+            border: none;
+            padding: 18px 35px;
+            border-radius: 35px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin-top: 25px;
+            box-shadow: 0 15px 30px rgba(255,71,87,0.4);
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        .btn:hover { 
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(255,71,87,0.6);
+        }
+        
+        .floating-hearts {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            pointer-events: none;
+            z-index: 999;
+        }
+        .heart-float {
+            position: absolute;
+            animation: floatUp 4s linear infinite;
+            font-size: 28px;
+        }
+        @keyframes floatUp {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0); opacity: 1; }
+            50% { opacity: 1; }
+            100% { transform: translateY(-100px) rotate(720deg) scale(1.5); opacity: 0; }
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 3rem; }
+            .name { font-size: 3.5rem; }
+            .photo-frame { height: 220px; }
+            .photo-gallery { grid-template-columns: repeat(2, 1fr); }
+            .kilo-input-group { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="floating-hearts" id="heartsContainer"></div>
+    
+    <div class="container">
+        <div class="heart-big" title="Click for magic!">💖</div>
+        <h1>Happy</h1>
+        <h1>1st Anniversary!</h1>
+        <div class="name" onclick="nameGlow()">Raaanuu 💕</div>
+        
+        <div class="love-kilo-meter" onclick="focusKiloInput()">
+            <h3 style="color: white; margin-bottom: 15px;">💕 How Much Kilo Do You Love Me? 💕</h3>
+            <div id="kiloFill"></div>
+            <div class="kilo-input-group">
+                <input type="number" id="kiloInput" placeholder="100" min="100" value="100">
+                <button onclick="checkKiloLove()">Check Love 💖</button>
+            </div>
+            <div id="loveMessage" class="love-message"></div>
+        </div>
+        
+        <button class="btn" onclick="showGift()">🎁 Click Meee 🎁</button>
+        
+        <div class="special-gift" id="giftBox">
+            <h2 style="color: #ff4757; margin-bottom: 20px;">💌 To My Raaanuu 💌</h2>
+            <p style="font-size: 1.3rem; line-height: 1.6; color: #333;">
+                <strong>365 days</strong> of pure Chaos with you Badakkk 🌟<br><br>
+               💕First Of Thank Raanu Merii Jaaanu For Staying with me this long , I’m Really Lucky That U came in my life , I never thought that We ever Can be match in school, but here we are Now ❤️. I know we are different pieces of puzzle , but I also we fit together and make a beautiful One , Konala watl ki “Prafulya Chi Bahin 😂” pasun cha safar kdhi “Raanuuuu Baaal 🦆 “ prynt yeil🫶 .Ha ek varsha kdhi gela kalal ch nahi asch purn Life sobt nighali pahije 🤞.
+I always want to be with you in joy,sorrow,anger, pain, in alll possible conditions. Please be with me always. Your Presence Matters the Most Champuuuu Don 🐥🐥💕<br><br>
+                <em>I love you So Much my Darlinggggggg 😘</em>
+            </p>
+            <button class="btn" onclick="hideGift()">Close Message 💝</button>
+        </div>
+        
+        <div class="photo-gallery">
+            <!-- YOUR IMAGES WITH DIRECT LINKS + FALLBACKS -->
+            <div class="photo-frame" onclick="photoPulse(this)">
+                <img src="https://lh3.googleusercontent.com/d/1ooCFXe6S6mvkQmcrMHpoIyd3GTv5EE66=s800" 
+                     alt="Our Memory 1" 
+                     onerror="this.src='https://via.placeholder.com/280x280/ff6b6b/fff?text=💕+Memory+1'">
+                <div class="memory-text">Always ✨</div>
+            </div>
+            <div class="photo-frame" onclick="photoPulse(this)">
+                <img src="https://lh3.googleusercontent.com/d/1KMnM2rDB2ss0FY2lRqWzrwdUBirAa92h=s800" 
+                     alt="Our Memory 2" 
+                     onerror="this.src='https://via.placeholder.com/280x280/feca57/fff?text=💕+Memory+2'">
+                <div class="memory-text">Be With 💕</div>
+            </div>
+            <div class="photo-frame" onclick="photoPulse(this)">
+                <img src="https://lh3.googleusercontent.com/d/1WpkgYNhzaSTamaipa-ROv-qz7Ag3uvD5=s800" 
+                     alt="Our Memory 3" 
+                     onerror="this.src='https://via.placeholder.com/280x280/48dbfb/fff?text=💕+Memory+3'">
+                <div class="memory-text">🌟 Meeeeee 🌟</div>
+            </div>
+            <div class="photo-frame" onclick="photoPulse(this)">
+                <img src="https://lh3.googleusercontent.com/d/16aQyckKWNR46PPsDunPh0USY6xWL3Sv3=s800" 
+                     alt="Our Memory 4" 
+                     onerror="this.src='https://via.placeholder.com/280x280/ff9ff3/fff?text=💕+Memory+4'">
+                <div class="memory-text">💖 Champuuuuu Donnnnn 💖</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Floating hearts
+        setInterval(createFloatingHeart, 150);
+        function createFloatingHeart() {
+            const heart = document.createElement('div');
+            heart.className = 'heart-float';
+            heart.textContent = ['💖','💕','💗','💝','✨','🥰'][Math.floor(Math.random()*6)];
+            heart.style.left = Math.random() * 100 + '%';
+            heart.style.animationDuration = (Math.random() * 2 + 3) + 's';
+            document.getElementById('heartsContainer').appendChild(heart);
+            setTimeout(() => heart.remove(), 4500);
+        }
+
+        // Kilo Love Meter
+        function checkKiloLove() {
+            const input = document.getElementById('kiloInput');
+            const value = parseInt(input.value) || 0;
+            const fill = document.getElementById('kiloFill');
+            const message = document.getElementById('loveMessage');
+            
+            if (value >= 100) {
+                const doubleValue = value * 2;
+                fill.style.width = '100%';
+                message.textContent = `But I Love You ${doubleValue} Kilo 💞`;
+                message.classList.add('show');
+                createHeartBurst(30);
+            } else {
+                fill.style.width = '20%';
+                message.textContent = 'Minimum 100 Kilo Love Required! 😜';
+                message.classList.add('show');
+                createHeartBurst(5);
+            }
+        }
+
+        function focusKiloInput() {
+            document.getElementById('kiloInput').focus();
+        }
+
+        // Enter key support
+        document.getElementById('kiloInput').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                checkKiloLove();
+            }
+        });
+
+        // Gift box
+        function showGift() { 
+            document.getElementById('giftBox').style.display = 'block'; 
+            createHeartBurst(20);
+        }
+        function hideGift() { 
+            document.getElementById('giftBox').style.display = 'none'; 
+        }
+
+        // Effects
+        function nameGlow() {
+            const name = document.querySelector('.name');
+            name.style.transform = 'scale(1.2)';
+            name.style.textShadow = '0 0 40px #ff6b6b, 4px 4px 8px rgba(0,0,0,0.5)';
+            setTimeout(() => {
+                name.style.transform = '';
+                name.style.textShadow = '';
+            }, 300);
+            createHeartBurst(15);
+        }
+
+        function photoPulse(frame) {
+            frame.style.transform = 'scale(0.95)';
+            setTimeout(() => frame.style.transform = '', 200);
+            createHeartBurst(10);
+        }
+
+        function createHeartBurst(count) {
+            for(let i = 0; i < count; i++) {
+                setTimeout(createFloatingHeart, i * 50);
+            }
+        }
+
+        // Heart click
+        document.querySelector('.heart-big').onclick = () => {
+            createHeartBurst(50);
+            document.body.style.animation = 'shake 0.6s';
+            setTimeout(() => document.body.style.animation = '', 600);
+        };
+    </script>
+</body>
+</html>
